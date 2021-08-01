@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "boards",
+  "info": {
+    "name": "Board"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "default": "게시판"
+    },
+    "description": {
+      "type": "text"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "normal",
+        "gallery",
+        "blog"
+      ],
+      "required": true,
+      "default": "normal"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "required": true,
+      "private": true
+    },
+    "properties": {
+      "type": "json"
+    },
+    "menu_id": {
+      "via": "board_id",
+      "model": "menu"
+    }
+  }
+}

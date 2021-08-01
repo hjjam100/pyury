@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "menus",
+  "info": {
+    "name": "Menu",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "properties": {
+      "type": "json"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "required": true,
+      "private": true
+    },
+    "body": {
+      "type": "richtext"
+    },
+    "board_id": {
+      "model": "board",
+      "via": "menu_id"
+    }
+  }
+}
